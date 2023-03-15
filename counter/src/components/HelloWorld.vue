@@ -1,6 +1,6 @@
 <template>
   <div class="home-view">
-    <h1>Welcome to the View Counter App!</h1>
+    <h1>Welcome to the View Counter!</h1>
     <p>
       Click the button below to go to the counter app and start counting your views.
     </p>
@@ -66,7 +66,7 @@
   
   .go-to-counter-btn {
     margin-top: 30px;
-    padding: 11px 22px;
+    padding: 12px 22px;
     font-size: 1.6rem;
   }
 }
