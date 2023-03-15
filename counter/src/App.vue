@@ -3,7 +3,10 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/counter">Counter</router-link>
   </nav>
-  <router-view/>
+  <transition name="fade">
+    <router-view/>
+  </transition>
+  
 </template>
 
 <style>
@@ -27,5 +30,15 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
