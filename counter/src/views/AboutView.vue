@@ -1,6 +1,6 @@
 <template>
   <div class="counter-app">
-    <h1 class="counter-title">Counter: {{ counter }}</h1>
+    <h1 class="counter-title">Counter: {{ count }}</h1>
     <div class="counter-controls">
       <button class="counter-btn increment-btn" @click="increment">+</button>
       <button class="counter-btn decrement-btn" @click="decrement">-</button>
@@ -15,34 +15,30 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
+import useCounter from '@/useCounter';
 
 export default {
-  computed: {
-    counter() {
-      return this.$store.getters.counter;
-    },
-  },
-  methods: {
-    increment() {
-      this.$store.dispatch("increment");
-    },
-    decrement() {
-      this.$store.dispatch("decrement");
-    },
-    reset() {
-      this.$store.dispatch("reset");
-    },
-    setValue(value) {
-      this.$store.dispatch("setValue", parseInt(value));
-    },
-  },
-  data() {
+  setup() {
+    const store = useStore();
+    const { count, increment, decrement, reset, setValue } = useCounter;
+
+    function setCount() {
+      store.dispatch('setValue', count.value);
+    }
+
     return {
-      value: "",
+      count,
+      increment,
+      decrement,
+      reset,
+      setCount,
+      setValue
     };
-  },
+  }
 };
 </script>
+
 
 <style>
 .counter-app {
