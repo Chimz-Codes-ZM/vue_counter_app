@@ -1,50 +1,31 @@
 <template>
-  <div>
-    <center>
-      <h1>Counter: {{ counter }}</h1>
-      <button @click="increment">Increment</button>
-      <button @click="decrement">Decrement</button>
-      <button @click="reset">Reset</button>
-      <input type="number" v-model="value">
-      <button @click="setValue(value)">Set to Value</button>
-    </center>
-  </div>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/counter">Counter</router-link>
+  </nav>
+  <router-view/>
 </template>
 
-<script>
-
-
-export default {
-computed: {
- counter(){
-  return this.$store.getters.counter
- }
-},
-
-methods: {
-  increment() {
-    this.$store.dispatch('increment')
-  },
-  decrement() {
-    this.$store.dispatch('decrement')
-  },
-  reset(){
-    this.$store.dispatch('reset')
-  },
-  setValue(value) {
-    this.$store.dispatch("setValue", parseInt(value))
-  }
-},
-
-data() {
-  return {
-    value: "",
-  };
-}
-  
-}
-</script>
-
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
+nav {
+  padding: 30px;
+  font-size: x-large;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
