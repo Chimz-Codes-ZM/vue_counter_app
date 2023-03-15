@@ -1,7 +1,7 @@
 <template>
   <div class="counter-app">
     <h1 class="counter-title">Counter: {{ count }}</h1>
-    <div class="counter-controls">
+    <div class="counter-controls" id="controller">
       <button class="counter-btn increment-btn" @click="increment">+</button>
       <button class="counter-btn decrement-btn" @click="decrement">-</button>
       <button class="counter-btn reset-btn" @click="reset">Reset</button>
@@ -104,5 +104,24 @@ export default {
   text-align: center;
   width: 150px;
   border: 2px solid black;
+}
+
+@media (max-width: 768px) {
+  /* Adjust styles for screens smaller than 768px */
+  .counter-title {
+    font-size: 2rem;
+  }
+  
+  .counter-controls {
+    flex-direction: column;
+  }
+  
+  .counter-input {
+    margin: 10px 0;
+  }
+
+  #controller {
+    gap: 10px;
+  }
 }
 </style>
