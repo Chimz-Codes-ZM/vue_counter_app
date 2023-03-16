@@ -2,7 +2,7 @@ Vue Counter App
 This is a Vue.js application that implements a simple counter with increment, decrement, reset, and set value functionality. The application uses Vue.js and Vuex for state management.
 
 Installation and Setup
-Clone this repository using git clone https://github.com/your-username/vue-counter.git.
+Clone this repository using git clone [https://github.com/your-username/vue-counter](https://github.com/Chimz-Codes-ZM/vue_counter_app).git.
 Change into the project directory using cd vue-counter.
 Install the required dependencies using npm install.
 Run the application using npm run serve.
